@@ -8,7 +8,6 @@
 import Foundation
 
 
-
 struct News: Codable{
     
     var status: String?

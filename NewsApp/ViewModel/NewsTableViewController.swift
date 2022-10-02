@@ -2,7 +2,7 @@
 //  NewsTableViewController.swift
 //  NewsApp
 //
-//  Created by Talla Toure on 27/09/2022.
+//  Created by Talla Toure on 29/09/2022.
 //
 
 import UIKit
@@ -31,21 +31,6 @@ class NewsTableViewController: UIViewController, UITableViewDelegate {
         
         print("Nb articles \(self.news.articles?.count)")
         
-        /*if let nbarticles = self.news.articles?.count{
-            for i in 0...nbarticles-1{
-                if let urlimages = self.news.articles?[i].urlToImage{
-                    
-                    
-                    self.newsapi.loadNewsImages(urlimg:urlimages)
-                    { images in
-                        self.loadedImages.append(images)
-                    }
-                }else{
-                    self.loadedImages.append(UIImage())
-                    print("Images not available : \(i)")
-                }
-            }*/
-            
             DispatchQueue.main.async {
                 self.newsTableView.reloadData()
             }
@@ -81,30 +66,40 @@ extension NewsTableViewController: UITableViewDataSource{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for:indexPath) as! NewsCellView
         
+        var cellimage:UIImage?
+        var newstitle:String?
+        
             if let newsarticles = self.news.articles {
-                if indexPath.row < newsarticles.count{
-                    if let imgurl = newsarticles[indexPath.row].urlToImage{
+                if indexPath.row > newsarticles.count{
+                    print("ERROR: No articles found")
+                    return cell
+                }
+                
+                newstitle = newsarticles[indexPath.row].title
+                DispatchQueue.main.async{
+                    cell.textLabel?.text = newstitle
+                }
+            
+                
+                if let imgurl = newsarticles[indexPath.row].urlToImage{
                         self.newsapi.loadNewsImages(urlimg: imgurl){ image in
-                            //cellimage = image!
+                            cellimage = image ?? UIImage()
+                            DispatchQueue.main.async{
+                                cell.imageView?.image = cellimage
+                            }
                             
-                            DispatchQueue.main.async{
-                                cell.textLabel?.text = newsarticles[indexPath.row].title
-                                cell.imageView?.image = image
-                            }
                         }
-                    }
-                        /*
-                        self.newsapi.loadNewsImages(urlimg: imgurl){ image in
-                            //self.loadedImages.append(image)
-                            DispatchQueue.main.async{
-                                cell.imageView?.image = image
-                            }
-                        }*/
-                    }
+                }else{
+                    print("Image Url not found")
+                    cellimage = nil
+                }
+                
 
             }else{
                 print("Can't access item")
             }
+        
+
         
         return cell
         
