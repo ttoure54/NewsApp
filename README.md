@@ -3,25 +3,25 @@ NewsApp est une application simple qui permet de récupérer les derniers articl
  
 ## Previews
 
-<div style="display: inline-block">
+<span style="display: inline-block">
 <img
   src="/Previews/LaunchScreen_pic.jpg"
   alt="LaunchScreen preview"
   title="LaunchScreen preview"
-  style="display: inline-block; margin: 0 auto; height: 80px; width: 50px">
+  style="display: inline-block; margin: 0 auto; height: 150px; width: 100px">
   
  <img
   src="/Previews/TableViewArtciles_pic.jpg"
   alt="TableViewArtciles preview"
   title="TableViewArtciles preview"
-  style="display: inline-block; margin: 0 auto; height: 80px; width: 50px">
+  style="display: inline-block; margin: 0 auto; height: 150px; width: 100px">
   
 <img
   src="/Previews/DetailView_pic.jpg"
   alt="DetailView preview"
   title="DetailView preview"
-  style="display: inline-block; margin: 0 auto; height: 80px; width: 50px">
-</div>
+  style="display: inline-block; margin: 0 auto; height: 150px; width: 100px">
+</span>
 
   
  
