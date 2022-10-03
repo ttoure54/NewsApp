@@ -71,7 +71,6 @@ class Newsapi {
     func loadNewsImages(urlimg: String, completionHandler: @escaping(UIImage?)-> Void){
 
             
-            //App Transport Security has blocked a cleartext HTTP connection tomedia2.woopic.comsince it is insecure. Use HTTPS instead or add this domain to Exception Domains in your Info.plist. => Change Info.plist
         /// - Parameters : Image's url to download, Completion Handler : Image downloaded
         /// - Returns :
             print("Load Images: \(urlimg)")
