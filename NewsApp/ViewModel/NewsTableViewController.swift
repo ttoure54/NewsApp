@@ -29,7 +29,7 @@ class NewsTableViewController: UIViewController, UITableViewDelegate {
             //print("Total count articles \(self.news.articles?.count)")
         //}
         
-        print("Nb articles \(self.news.articles?.count)")
+        //print("Nb articles \(self.news.articles?.count)")
         
             DispatchQueue.main.async {
                 self.newsTableView.reloadData()

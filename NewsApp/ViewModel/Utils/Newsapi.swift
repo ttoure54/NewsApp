@@ -32,7 +32,7 @@ class Newsapi {
     
     func loadNews(completionHandler: @escaping(News)-> Void){
         
-        print("Load news")
+        //Test purpose: print("Load news")
         
         guard let url = URL(string: APIurl) else {
             print("ERROR: Invalid url")
@@ -73,7 +73,9 @@ class Newsapi {
             
         /// - Parameters : Image's url to download, Completion Handler : Image downloaded
         /// - Returns :
-            print("Load Images: \(urlimg)")
+           
+        
+        //Test purpose: print("Load Images: \(urlimg)")
             
             guard let url = URL(string: urlimg) else {
                 print("ERROR: Invalid url")
